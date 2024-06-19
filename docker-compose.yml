@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  service1:
+    build:
+      context: ./llamaApp
+    ports:
+      - "11431:11434"
+
+  service2:
+    build:
+      context: ./mistralApp
+    ports:
+      - "11433:11434"
+
+  service3:
+    build:
+      context: ./phi3
+    ports:
+      - "11432:11434"
