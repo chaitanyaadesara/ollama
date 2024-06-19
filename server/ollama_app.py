@@ -13,9 +13,9 @@ def ask():
     res = []
     errors = []
     urls = [
-        "http://localhost:11434/api/generate",
-        "http://localhost:11434/api/generate",
-        "http://localhost:11434/api/generate",
+        "http://localhost:11431/api/generate",
+        "http://localhost:11432/api/generate",
+        "http://localhost:11433/api/generate",
     ]
     models = ["llama3", "phi3", "mistral"]
     for i in [0,1,2]:
