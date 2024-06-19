@@ -11,10 +11,11 @@ def ask():
     if not prompt:
         return jsonify({"error": "No prompt provided"}), 400
     res = []
+    errors = []
     urls = [
-        "http://localhost:11431/api/generate",
-        "http://localhost:11432/api/generate",
-        "http://localhost:11433/api/generate",
+        "http://localhost:11434/api/generate",
+        "http://localhost:11434/api/generate",
+        "http://localhost:11434/api/generate",
     ]
     models = ["llama3", "phi3", "mistral"]
     for i in [0,1,2]:
@@ -26,6 +27,7 @@ def ask():
         headers = {
             "Content-Type": "application/json"
         }
+        print(prompt, models[i], "---------------------------------------------------------")
         response = requests.post(url, json=payload, headers=headers)
         if response.status_code == 200:
             res.append({
@@ -33,7 +35,12 @@ def ask():
                 "resp": response.json().get("text")
             })
         else:
-            return jsonify({"error": f"Error: {response.status_code}, {response.text}"}), 500
+            print(response.json())
+            errors.append({
+                "model": models[i],
+                "error": response.text
+            })
+    return jsonify([res, errors])
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
