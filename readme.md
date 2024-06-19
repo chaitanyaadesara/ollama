@@ -1,9 +1,9 @@
 Setting up LLMs
 
 Prerequisites:
-- Install Python3
-- Install Docker (LTS version)
-- Install Postman API Client 
+- Install [Python3](https://www.python.org/downloads/)
+- Install [Docker](https://docs.docker.com/engine/install/) (LTS version)
+- Install [Postman](https://www.postman.com/downloads/) API Client 
 
 
 How to build
