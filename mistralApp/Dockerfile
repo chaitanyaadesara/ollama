@@ -1,7 +1,7 @@
 # Stage 1: Use the Ollama image from Docker Hub
 FROM ollama/ollama
 EXPOSE 11433
-COPY script.sh /scripts/script.sh
+COPY mistral.sh /scripts/script.sh
 RUN ["chmod", "+x", "/scripts/script.sh"]
 
 # Run
