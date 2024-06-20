@@ -16,4 +16,4 @@ COPY ollama_app.py /app/ollama_app.py
 EXPOSE 5000
 
 # Run the Flask app
-CMD ["python3", "/app/app.py"]
+CMD ["python3", "/app/ollama_app.py"]
