@@ -16,14 +16,14 @@ app.post('/ask', async (req, res) => {
     const responses = [];
     const errors = [];
     const urls = [
-        // "http://localhost:11431/api/generate",
+        "http://localhost:11431/api/generate",
         "http://localhost:11432/api/generate",
-        // "http://localhost:11433/api/generate",
+        "http://localhost:11433/api/generate",
     ];
     const models = [
-        // "llama3",
+        "llama3",
         "phi3",
-        // "mistral"
+        "mistral"
     ];
 
     for (let i = 0; i < urls.length; i++) {
