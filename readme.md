@@ -6,9 +6,10 @@ Prerequisites:
 
 
 How to build
+`docker compose build --progress=plain`
 
-1) docker compose build --progress=plain
-2) docker compose up
+How to run Images
+`docker compose up`
 
 Stop docker images
 `docker-compose down`
