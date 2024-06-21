@@ -17,8 +17,8 @@ services:
     ports:
       - "11432:11434"
 
-  # service4:
-  #   build:
-  #     context: ./server
-  #   ports:
-  #     - "5000:5000"
+  service4:
+    build:
+      context: ./server
+    ports:
+      - "5000:5000"

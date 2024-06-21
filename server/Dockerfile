@@ -1,21 +1,18 @@
-FROM ubuntu:20.04
+# Use Node.js base image with a specified version
+FROM node:16-alpine
 
-# Install necessary packages
-RUN apt-get update && apt-get install -y \
-    curl \
-    nodejs \
-    npm
+# Create app directory
+WORKDIR /usr/src/app
 
+# Install app dependencies
+COPY package*.json ./
+RUN npm install
 
-# Copy the Flask app to the container
-COPY ollama_app.js /app/ollama_app.js
-COPY package.json /app/package.json
+# Bundle app source
+COPY . .
 
-# Install Flask
-RUN cd app
-RUN npm i
-# Expose the port the app runs on
+# Expose port 5000
 EXPOSE 5000
 
-# Run the Flask app
+# Command to run the server
 CMD ["node", "ollama_app.js"]
