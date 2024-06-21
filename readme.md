@@ -1,15 +1,14 @@
 Setting up LLMs
 
 Prerequisites:
-- Install [Python3](https://www.python.org/downloads/)
 - Install [Docker](https://docs.docker.com/engine/install/) (LTS version)
-- Install [Postman](https://www.postman.com/downloads/) API Client 
+- Install [Postman](https://www.postman.com/downloads/) API Client (Optional)
 
 
 How to build
 
-1) docker-compose build --progress=plain
-2) docker-compose up
+1) docker compose build --progress=plain
+2) docker compose up
 
 Stop docker images
-docker-compose down
+`docker-compose down`
