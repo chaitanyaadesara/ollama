@@ -4,6 +4,10 @@ const axios = require('axios');
 const app = express();
 app.use(express.json());
 
+app.get('/', async (req, res) => {
+    res.json("hello from ollama");
+});
+
 app.post('/ask', async (req, res) => {
     const data = req.body;
     const prompt = data.prompt;
