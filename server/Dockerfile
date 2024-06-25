@@ -1,18 +1,19 @@
-# Use Node.js base image with a specified version
-FROM node:16-alpine
+FROM python:3.8-slim
 
-# Create app directory
-WORKDIR /usr/src/app
+# Set the working directory to /app
+WORKDIR /app
 
-# Install app dependencies
-COPY package*.json ./
-RUN npm install
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-# Bundle app source
-COPY . .
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir flask requests
 
-# Expose port 5000
+# Make port 5000 available to the world outside this container
 EXPOSE 5000
 
-# Command to run the server
-CMD ["node", "ollama_app.js"]
+# Define environment variable
+ENV NAME World
+
+# Run app.py when the container launches
+CMD ["python", "ollama_app.py"]
